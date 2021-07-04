@@ -1,0 +1,124 @@
+﻿using System;
+using System.Threading;
+
+namespace CSharpeModule1
+{
+    public class WhileLoop
+    {
+        //wap to display Your name 10 time 
+        public void Msg()
+        {
+            int i = 1;// initilization 
+            while (i <= 10) //condition
+            {
+                Console.WriteLine("Jay Prakash Pathak");//statements
+                i++;//increment/decrement
+            }
+        }
+        //wap to accept a number and check whether it is Prime or not 
+        public void Prime()
+        {
+            int num;
+        accept:
+            Console.WriteLine("Enter a number");
+            num = Convert.ToInt32(Console.ReadLine());// num=17
+            int i = 2;
+            if (num == 0)
+            {
+                Console.WriteLine("Cant enter 0");
+                Thread.Sleep(2000);
+                Console.Clear();
+                goto accept;
+            }
+
+            while (i <= num / 2)
+            {
+                if (num % i == 0)
+                {
+                    break;
+                }
+                i++;
+            }
+            if (i > num / 2)
+            {
+                Console.WriteLine("Prime No");
+            }
+            else
+            {
+                Console.WriteLine("Not Prime No");
+            }
+        }
+
+        //wap to accept a number and reverse it
+
+        public void Reverse()
+        {
+            int num, res=0, rem;
+            Console.WriteLine("Enter a number");
+            num = Convert.ToInt32(Console.ReadLine()); //3650 =563
+            while (num != 0) // 3650 |365 |36|3
+            {
+                rem = num % 10;// 3650%10=0 |365%10=5|36%10=6 |3%10=3
+                res = res * 10 + rem;//0*10+0=0 |0*10+5=5|5*10+6=56 |56*10+3=563
+                num = num / 10; //3650/10=365 |365/10=36|36/10=3 |3/10=0
+            }
+            Console.WriteLine("After Reversing Number " + res);
+        }
+        public void Fabonice()
+        {
+            int i=3, num1=0,num2=1,num3,term;
+            Console.WriteLine("Enter series terms");
+            term = Convert.ToInt32(Console.ReadLine());
+            Console.Write(num1 + "\t" + num2);
+            while (i<=term) //
+            {
+                num3 = num1 + num2;
+                Console.Write("\t" + num3);
+                num1 = num2;
+                num2 = num3;
+                num3 = 0;
+                i++;
+            }
+        }
+        public void FaboniceUser()
+        {
+            int i = 3, num1 = 0, num2 = 1, num3, term;
+            Console.WriteLine("Enter series terms");
+            term = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter first two number of the series");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            num2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write(num1 + "\t" + num2);
+            while (i <= term) 
+            {
+                num3 = num1 + num2;
+                Console.Write("\t" + num3);
+                num1 = num2;
+                num2 = num3;
+                num3 = 0;
+                i++;
+            }
+        }
+    }
+}
+/*
+ While Loop Syntax 
+
+    init;
+    while(Condition)   for(inti; condition;incr/decr) for(;;;)
+    {                       {
+        statements              statement;
+                            }
+        incr/decr;
+    }
+     
+     
+     */
+/*
+    1. WAP to accept a number and reverse it.
+    2. WAP to accept a number and Display sum of its digit
+    3. WAP to accept a number and Display Product of its digit
+    4. WAP to accept a number and Check whether it is Palindrom number or not (121,15651,1331)
+    5. WAP to accept a number and Check whether it is armstrong number or not (153,370,371,407)
+    3. WAP to Display fabonice Serice upto n terms, (0,1,1,2,3,5,8,13,21,34,55,89....)
+     */
